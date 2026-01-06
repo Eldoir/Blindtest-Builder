@@ -1,9 +1,34 @@
-# GENERATION
+# Prerequisites
 
-Run python file _generate_video.py_.
+* Python
+* [FFmpeg](https://www.ffmpeg.org/)
 
-qui lit le fichier _clip_config.json_.
-* Le fichier _intro.mp4_ est utilisé en début de vidéo.
-* Le fichier _transition.mp4_ est utilisé entre chaque track.
-* Le fichier _outro.mp4_ est utilisé en fin de vidéo.
-Le fichier output est nommé _final_output.mp4_.
+# How to Use
+
+Run _generate_video.py_.
+
+## Considerations
+
+* Clips must be in a _clips/_ folder.
+* Each clip must be made of a .mp4 and a .mp3 file named the same way.
+  * For example: _Cuphead.mp4_ and _Cuphead.mp3_.
+* Timestamps for clips go in _clips_config.json_.
+* The output file goes into the _output/_ folder and is named _blind_test.mp4_.
+
+## Special assets
+You can append some special assets to the timeline:
+* A file named _intro.mp4_ will be prepended at the very beginning of the video.
+* A file named _transition.mp4_ will be prepended to *every* clip during the video.
+  * For now the transition duration is 10 seconds.
+  * A timer will be displayed at the center of the video, counting down from 10 to 0.
+  * Also the number of the clip will be displayed in the top left corner.
+* A file named _outro.mp4_ will be appended at the very end of the video.
+
+All of those will be ignored if not present.
+
+## Next steps
+* Adjust audio during transitions (wrong right now)
+* Fix the couple seconds black after transition and before each clip
+* Add cross fade transitions
+  * Make it optional
+* Put python constants in a config file

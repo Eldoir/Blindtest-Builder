@@ -16,15 +16,16 @@ Run _generate_video.py_.
 * The output file goes into the _output/_ folder and is named _blind_test.mp4_.
 
 ## Special assets
-You can append some special assets to the timeline:
-* A file named _intro.mp4_ will be prepended at the very beginning of the video.
-* A file named _transition.mp4_ will be prepended to *every* clip during the video.
+You can insert some special assets into the timeline.\
+These assets must be in an _assets/_ folder.\
+They will be ignored if not present.
+
+* _intro.mp4_ will be prepended at the very beginning of the video.
+* _transition.mp4_ will be prepended to *every* clip during the video.
   * For now the transition duration is 10 seconds.
   * A timer will be displayed at the center of the video, counting down from 10 to 0.
   * Also the number of the clip will be displayed in the top left corner.
-* A file named _outro.mp4_ will be appended at the very end of the video.
-
-All of those will be ignored if not present.
+* _outro.mp4_ will be appended at the very end of the video.
 
 ## Next steps
 * Adjust audio during transitions (wrong right now)

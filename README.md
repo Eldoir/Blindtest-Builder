@@ -29,7 +29,7 @@ They will be ignored if not present.
 
 ## Next steps
 * Adjust audio during transitions (wrong right now)
-* Fix the couple seconds black after transition and before each clip
 * Add cross fade transitions
   * Make it optional
 * Put python constants in a config file
+* Ask to replace if output file already exists

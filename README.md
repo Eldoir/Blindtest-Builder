@@ -49,7 +49,6 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `output/`: I put the output files of the program here.
 
 # Next steps
-* Also display clip number on clip
 * Add text on clip (title, should be in config file)
 * Add cross fade transitions
   * Make it optional

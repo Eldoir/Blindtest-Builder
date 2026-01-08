@@ -89,16 +89,21 @@ def build_ffmpeg_command(config: serialization.Config):
         video_idx = input_map[f'video_{clip}']
         audio_idx = input_map[f'audio_{clip}']
         
-        # Create transition with overlays
-        trans_label = f"trans{i}"
-        filter_parts.append(
-            f"[{transition_idx}:v]"
+        clip_number_text_filter = (
             f"drawtext="
             f"fontfile='{font_file}':"
             f"text='#{i}':"
             f"x=20:y=20:"
-            f"fontsize=256:"
-            f"fontcolor=white,"
+            f"fontsize=255:"
+            f"fontcolor=white:"
+            f"borderw=4"
+        )
+
+        # Create transition with overlays
+        trans_label = f"trans{i}"
+        filter_parts.append(
+            f"[{transition_idx}:v]"
+            f"{clip_number_text_filter},"
             f"drawtext="
             f"fontfile='{font_file}':"
             f"text='%{{eif\\:max(0\\,ceil({transition_duration}-t))\\:d}}':"
@@ -115,7 +120,8 @@ def build_ffmpeg_command(config: serialization.Config):
         filter_parts.append(
             f"[{video_idx}:v]"
             f"trim=start={clip.video.start}:end={clip_video_end},"
-            f"setpts=PTS-STARTPTS"
+            f"setpts=PTS-STARTPTS,"
+            f"{clip_number_text_filter}"
             f"[{video_label}]"
         )
         

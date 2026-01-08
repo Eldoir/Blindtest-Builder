@@ -54,6 +54,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
 # Next steps
 * Add "enabled" flag in Clip class (true by default) and make it work
 * Add "shuffle_clips" flag in Config
+* Shrink clip title if too long
 * Add (optional) cross fade transitions...
 * ...or forget about cross fade transitions
   * And display a timer on clip 3s before next transition instead

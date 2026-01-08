@@ -31,7 +31,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `video` (_Stream_): see below.
   * `audio` (_Stream_): see below.
 * Optional
-  * `year` (_int_): displayed after the title if given.
+  * `year` (_int_): displayed below the title if given.
 
 ### Stream
 * Mandatory

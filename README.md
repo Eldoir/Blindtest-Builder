@@ -49,5 +49,8 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `output/`: I put the output files of the program here.
 
 # Next steps
+* Add "test" flag in config, that only computes the first 2 clips
 * Add cross fade transitions
-  * Make it optional
+  * And make it optional
+* Or forget about cross fade transitions
+  * And display a timer on clip 3s before next transition instead

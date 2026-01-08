@@ -1,5 +1,4 @@
 import subprocess
-import json
 import logging
 from pathlib import Path
 import serialization
@@ -19,31 +18,31 @@ def get_video_duration(path: Path) -> float:
     )
     return float(result.stdout.strip())
 
-def determine_font_file() -> str:
-    """Determine font path based on OS"""
+def determine_font_file(config: serialization.Config) -> str | None:
+    if config.font is not None:
+        return str(config.font)
+
+    # Determine font path based on OS
     import platform
     system = platform.system()
     
+    # Windows
     if system == "Windows":
-        font_file = "C:/Windows/Fonts/arial.ttf"
-    elif system == "Darwin":  # macOS
-        font_file = "/System/Library/Fonts/Supplemental/Arial.ttf"
-    else:  # Linux
-        # Try common locations
-        possible_fonts = [
-            "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-            "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
-            "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
-        ]
-        font_file = None
-        for f in possible_fonts:
-            if Path(f).exists():
-                font_file = f
-                break
-        if not font_file:
-            font_file = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-
-    return font_file
+        return "C:/Windows/Fonts/arial.ttf"
+    # MacOS
+    if system == "Darwin":
+        return "/System/Library/Fonts/Supplemental/Arial.ttf"
+    # Linux
+    possible_fonts = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
+        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    ]
+    for f in possible_fonts:
+        if Path(f).exists():
+            return f
+        
+    return None
 
 def escape_filter_string(s: str) -> str:
     """Escape special characters for FFmpeg filter strings"""
@@ -103,7 +102,10 @@ def build_ffmpeg_command(config: serialization.Config):
         audio_streams.append(f"[{input_map['intro']}:a]")
     
     filter_parts = []
-    font_file = escape_filter_string(determine_font_file())
+    font_file = determine_font_file(config)
+    if font_file is None:
+        logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
+    font_file = escape_filter_string(str(font_file))
     transition_duration = get_video_duration(config.transition)
 
     # Process each clip

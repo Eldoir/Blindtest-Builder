@@ -3,6 +3,7 @@
   "outro": "assets/outro.mp4",
   "transition": "assets/transition.mp4",
   "output": "output/blind_test.mp4",
+  "font": "Super Meatball.ttf",
   "clips": [
     {
       "title": "Cuphead",

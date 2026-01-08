@@ -23,12 +23,15 @@ class Config:
     transition: Path
     output: Path
     clips: list[Clip]
+    font: Optional[Path] = None
     intro: Optional[Path] = None
     outro: Optional[Path] = None
 
     def __post_init__(self):
         self.transition = Path(self.transition)
         self.output = Path(self.output)
+        if self.font is not None:
+            self.font = Path(self.font)
         if self.intro is not None:
             self.intro = Path(self.intro)
         if self.outro is not None:
@@ -46,6 +49,7 @@ def load_config(path: str) -> Config:
         clips.append(clip)
 
     return Config(
+        font=data.get("font"),
         intro=data.get("intro"),
         outro=data.get("outro"),
         transition=data["transition"],

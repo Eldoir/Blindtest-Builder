@@ -26,8 +26,8 @@ Here are the possible fields for this config (all paths are **relative** to the 
 
 ### Clip
 * **title** (_str_): displayed on screen when the clip is revealed (after the transition).
-* **video**: a _Stream_ (see below).
-* **audio** a _Stream_ (see below).
+* **video** (_Stream_): see below.
+* **audio** (_Stream_): see below.
 
 ### Stream
 * **src** (_str_): a path to the source file.

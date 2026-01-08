@@ -19,10 +19,10 @@ Here are the possible fields for this config (all paths are **relative** to the 
 * Optional
   * **intro** (_str_): a path to a video that will be prepended at the very beginning of the final video.
   * **outro** (_str_): a path to a video that will be appended at the very end of the final video.
-  * **font** (_str_): a path to a font file (usually .ttf or .otf) to use for the texts on the final video. If not specified, a default font will be chosen depending on the platform:
-      * Windows: Arial
-      * MacOS: Arial
-      * Linux: DejaVuSans-Bold, or LiberationSans-Bold if not found
+  * **font** (_str_): a path to a font file (usually .ttf or .otf) to use for the texts on the final video. If not specified, the default font will be:
+      * **Windows**: _Arial_
+      * **MacOS**: _Arial_
+      * **Linux**: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
 
 ### Clip
 * **title** (_str_): displayed on screen when the clip is revealed (after the transition).

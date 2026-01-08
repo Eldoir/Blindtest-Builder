@@ -1,6 +1,6 @@
 # Prerequisites
 
-* Python
+* Python 3.x
 * [FFmpeg](https://www.ffmpeg.org/)
 
 # How to Use
@@ -17,20 +17,19 @@ Run _generate_video.py_.
 
 ## Special assets
 You can insert some special assets into the timeline.\
-These assets must be in an _assets/_ folder.\
-They will be ignored if not present.
+These assets must be in an _assets/_ folder.
 
-* _intro.mp4_ will be prepended at the very beginning of the video.
-* _transition.mp4_ will be prepended to *every* clip during the video.
+* (**Required**) _transition.mp4_ will be prepended to *every* clip during the video.
   * A timer will be displayed at the center of the video, counting down to 0 (its initial value depends on the duration of the transition video).
   * Also the number of the clip will be displayed in the top left corner.
-* _outro.mp4_ will be appended at the very end of the video.
+* (**Optional**) _intro.mp4_ will be prepended at the very beginning of the video. Ignored if not present.
+* (**Optional**) _outro.mp4_ will be appended at the very end of the video. Ignored if not present.
 
 ## Next steps
-* Adjust audio during transitions (wrong right now)
 * Also display clip number on clip
 * Add text on clip (title, should be in config file)
 * Add cross fade transitions
   * Make it optional
 * Put python constants in a config file
+* Custom font for ffmpeg texts
 * Ask to replace if output file already exists

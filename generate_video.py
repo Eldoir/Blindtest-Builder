@@ -162,7 +162,7 @@ def build_ffmpeg_command(config: serialization.Config):
     
     # Build final command
     cmd = [
-        "ffmpeg", "-y",
+        "ffmpeg",
         "-loglevel", "error",
         *inputs,
         "-filter_complex", filter_complex,

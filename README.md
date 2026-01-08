@@ -52,9 +52,9 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `output/`: I put the output files of the program here.
 
 # Next steps
-* Add "test" flag in config, that only computes the first 2 clips
-* Shrink title if too long?
-* Add cross fade transitions
-  * And make it optional
-* Or forget about cross fade transitions
+* Add "enabled" flag in Clip class (true by default) and make it work
+* Add "shuffle_clips" flag in Config
+* Add (optional) cross fade transitions...
+* ...or forget about cross fade transitions
   * And display a timer on clip 3s before next transition instead
+  * Audio cross-fade can still be performed later on using an editing tool

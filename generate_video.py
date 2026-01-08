@@ -127,6 +127,7 @@ def build_ffmpeg_command(config: serialization.Config):
             .fontsize(100)
             .centered_x()
             .option("text_align", "M+C")
+            .option("line_spacing", "-30")
             .bottom_y(30)
             .enable(f"between(t, 2, {clip_video_end})") # show after 2s and for the rest of the clip
             .build())

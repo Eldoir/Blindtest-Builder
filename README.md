@@ -7,29 +7,35 @@
 
 Run _generate_video.py_.
 
-## Considerations
+## Config
 
-* Clips must be in a _clips/_ folder.
-* Each clip must be made of a .mp4 and a .mp3 file named the same way.
-  * For example: _Cuphead.mp4_ and _Cuphead.mp3_.
-* Timestamps for clips go in _clips_config.json_.
-* The output file goes into the _output/_ folder and is named _blind_test.mp4_.
+The config is in _config.json_.\
+In the following structure, all paths are considered relative to the config file.
 
-## Special assets
-You can insert some special assets into the timeline.\
-These assets must be in an _assets/_ folder.
+* Mandatory
+  * **transition** (_str_): a path to a video that will be prepended to *every* clip during the video.
+    * A timer will be displayed at the center of the video, counting down to 0 (its initial value depends on the duration of the transition video).
+    * Also the number of the clip will be displayed in the top left corner.
+  * **output** (_str_): a path to the final video, built by this program.
+  * **clips** (_List[Clip]_): a list of clips (see below).
+* Optional
+  * **intro** (_str_): a path to a video that will be prepended at the very beginning of the final video.
+  * **outro** (_str_): a path to a video that will be appended at the very end of the final video.
 
-* (**Required**) _transition.mp4_ will be prepended to *every* clip during the video.
-  * A timer will be displayed at the center of the video, counting down to 0 (its initial value depends on the duration of the transition video).
-  * Also the number of the clip will be displayed in the top left corner.
-* (**Optional**) _intro.mp4_ will be prepended at the very beginning of the video. Ignored if not present.
-* (**Optional**) _outro.mp4_ will be appended at the very end of the video. Ignored if not present.
+### Clip
+* **title** (_str_): displayed on screen when the clip is revealed (after the transition).
+* **video**: a _Stream_ (see below).
+* **audio** a _Stream_ (see below).
+
+### Stream
+* **src** (_str_): a path to the source file.
+* **start** (_float_): the start position to crop the stream (in seconds).
+* **end** (_float_): the end position to crop the stream (in seconds).
 
 ## Next steps
 * Also display clip number on clip
 * Add text on clip (title, should be in config file)
 * Add cross fade transitions
   * Make it optional
-* Put python constants in a config file
 * Custom font for ffmpeg texts
 * Ask to replace if output file already exists

@@ -2,19 +2,7 @@ import subprocess
 import json
 import logging
 from pathlib import Path
-
-# ---------------- CONFIG ---------------- #
-ASSETS_DIR = Path("assets")
-INTRO_PATH = ASSETS_DIR / "intro.mp4"
-OUTRO_PATH = ASSETS_DIR / "outro.mp4"
-TRANSITION_PATH = ASSETS_DIR / "transition.mp4"
-CLIPS_DIR = Path("clips")
-OUTPUT_DIR = Path("output")
-OUTPUT_PATH = OUTPUT_DIR / "blind_test.mp4"
-CONFIG_PATH = Path("clips_config.json")
-
-with open(CONFIG_PATH, "r", encoding="utf-8") as f:
-    CLIP_CONFIG = json.load(f)
+import serialization
 
 def get_video_duration(path: Path) -> float:
     result = subprocess.run(
@@ -67,79 +55,73 @@ def escape_filter_string(s: str) -> str:
     s = s.replace("'", "'\\''")
     return s
 
-def build_ffmpeg_command():
+def build_ffmpeg_command(config: serialization.Config):
     """Build a single FFmpeg command to create the entire video"""
-    
-    transition_duration = get_video_duration(TRANSITION_PATH)
-    clips = list(CLIP_CONFIG.keys())
-    
+
     # Build input list
     inputs = []
     input_map = {}
     input_idx = 0
     
     # Add intro if exists
-    if INTRO_PATH.exists():
-        inputs.extend(["-i", str(INTRO_PATH)])
+    if config.intro is not None and config.intro.exists():
+        inputs.extend(["-i", str(config.intro)])
         input_map['intro'] = input_idx
         input_idx += 1
     
     # Add transition (used multiple times)
-    inputs.extend(["-i", str(TRANSITION_PATH)])
+    inputs.extend(["-i", str(config.transition)])
     input_map['transition'] = input_idx
     input_idx += 1
     
+    clips = list(map(lambda x: x, config.clips))
+
     # Add all video clips
-    for clip_name in clips:
-        video_path = CLIPS_DIR / f"{clip_name}.mp4"
-        inputs.extend(["-i", str(video_path)])
-        input_map[f'video_{clip_name}'] = input_idx
+    for clip in clips:
+        inputs.extend(["-i", str(clip.video.src)])
+        input_map[f'video_{clip}'] = input_idx
         input_idx += 1
     
     # Add all audio clips
-    for clip_name in clips:
-        audio_path = CLIPS_DIR / f"{clip_name}.mp3"
-        inputs.extend(["-i", str(audio_path)])
-        input_map[f'audio_{clip_name}'] = input_idx
+    for clip in clips:
+        inputs.extend(["-i", str(clip.audio.src)])
+        input_map[f'audio_{clip}'] = input_idx
         input_idx += 1
     
     # Add outro if exists
-    if OUTRO_PATH.exists():
-        inputs.extend(["-i", str(OUTRO_PATH)])
+    if config.outro is not None and config.outro.exists():
+        inputs.extend(["-i", str(config.outro)])
         input_map['outro'] = input_idx
         input_idx += 1
     
-    font_file = escape_filter_string(determine_font_file())
-    
-    # Build filter complex
-    filter_parts = []
     video_streams = []
     audio_streams = []
-    
+
     # Add intro video/audio if exists
     if 'intro' in input_map:
         video_streams.append(f"[{input_map['intro']}:v]")
         audio_streams.append(f"[{input_map['intro']}:a]")
     
+    filter_parts = []
+    font_file = escape_filter_string(determine_font_file())
+    transition_duration = get_video_duration(config.transition)
+
     # Process each clip
-    for i, clip_name in enumerate(clips, start=1):
-        v_start, v_end = CLIP_CONFIG[clip_name]["video"]
-        a_start, a_end = CLIP_CONFIG[clip_name]["audio"]
-        
-        video_duration = v_end - v_start
-        audio_duration = a_end - a_start
+    for i, clip in enumerate(clips, start=1):
+        video_duration = clip.video.end - clip.video.start
+        audio_duration = clip.audio.end - clip.audio.start
         full_duration = transition_duration + video_duration
         
         # Validate audio duration
         if audio_duration < full_duration - 0.01:  # 0.01s tolerance
             raise ValueError(
-                f"Audio for {clip_name} is too short: {audio_duration}s "
+                f"Audio for '{clip.title}' is too short: {audio_duration}s "
                 f"(need at least {full_duration}s)"
             )
         
         transition_idx = input_map['transition']
-        video_idx = input_map[f'video_{clip_name}']
-        audio_idx = input_map[f'audio_{clip_name}']
+        video_idx = input_map[f'video_{clip}']
+        audio_idx = input_map[f'audio_{clip}']
         
         # Create transition with overlays
         trans_label = f"trans{i}"
@@ -166,7 +148,7 @@ def build_ffmpeg_command():
         video_label = f"v{i}"
         filter_parts.append(
             f"[{video_idx}:v]"
-            f"trim=start={v_start}:end={v_end},"
+            f"trim=start={clip.video.start}:end={clip.video.end},"
             f"setpts=PTS-STARTPTS"
             f"[{video_label}]"
         )
@@ -185,7 +167,7 @@ def build_ffmpeg_command():
         audio_label = f"a{i}"
         filter_parts.append(
             f"[{audio_idx}:a]"
-            f"atrim=start={a_start}:end={a_end},"
+            f"atrim=start={clip.audio.start}:end={clip.audio.end},"
             f"asetpts=PTS-STARTPTS,"
             f"atrim=duration={full_duration},"
             f"apad=whole_dur={full_duration}"
@@ -225,7 +207,7 @@ def build_ffmpeg_command():
         "-crf", "23",         # quality: lower = better (18-28 range)
         "-c:a", "aac",
         "-b:a", "192k",
-        str(OUTPUT_PATH)
+        str(config.output)
     ]
     
     return cmd
@@ -235,22 +217,22 @@ def main():
         level=logging.INFO,
         format="%(levelname)s: %(message)s"
     )
+
+    config = serialization.load_config("config.json")
     
-    if not TRANSITION_PATH.exists():
-        logging.error(f'Transition video not found at {TRANSITION_PATH}')
+    if not config.transition.exists():
+        logging.error(f'Transition video not found at {config.transition}')
         return
     
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    
-    logging.info(f"Building video with {len(CLIP_CONFIG)} clips...")
+    logging.info(f"Building video with {len(config.clips)} clips...")
     
     try:
-        cmd = build_ffmpeg_command()
+        cmd = build_ffmpeg_command(config)
         
         # logging.debug(" ".join(cmd))
         
         subprocess.run(cmd, check=True)
-        logging.info(f"Video created at: {OUTPUT_PATH}")
+        logging.info(f"Video created at: {config.output}")
         
     except subprocess.CalledProcessError as e:
         logging.error(f"FFmpeg failed: {e}")

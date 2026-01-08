@@ -1,0 +1,34 @@
+{
+  "intro": "assets/intro.mp4",
+  "outro": "assets/outro.mp4",
+  "transition": "assets/transition.mp4",
+  "output": "output/blind_test.mp4",
+  "clips": [
+    {
+      "title": "Cuphead",
+      "video": {
+        "src": "clips/Cuphead.mp4",
+        "start": 1.0,
+        "end": 4.5
+      },
+      "audio": {
+        "src": "clips/Cuphead.mp3",
+        "start": 6.0,
+        "end": 19.5
+      }
+    },
+    {
+      "title": "Fez",
+      "video": {
+        "src": "clips/Fez.mp4",
+        "start": 1.0,
+        "end": 4.5
+      },
+      "audio": {
+        "src": "clips/Fez.mp3",
+        "start": 30.0,
+        "end": 43.5
+      }
+    }
+  ]
+}

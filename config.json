@@ -7,20 +7,31 @@
   "clip_duration": 8.0,
   "clips": [
     {
+        "title": "A Short Hike",
+        "video": {
+            "src": "clips/A Short Hike - Launch Trailer - Nintendo Switch.mp4",
+            "start": 1.0
+        },
+        "audio": {
+            "src": "clips/A Short Hike - Beach Buds.mp3",
+            "start": 15.0
+        }
+    },
+    {
       "title": "Cuphead",
       "video": {
-        "src": "clips/Cuphead.mp4"
+        "src": "clips/Cuphead Launch Trailer.mp4",
+        "start": 21.0
       },
       "audio": {
         "src": "clips/Cuphead.mp3",
-        "start": 6.0
+        "start": 5.0
       }
     },
     {
       "title": "Fez",
       "video": {
-        "src": "clips/Fez.mp4",
-        "start": 0.5
+        "src": "clips/FEZ - Launch Trailer - Nintendo Switch.mp4"
       },
       "audio": {
         "src": "clips/Fez.mp3"

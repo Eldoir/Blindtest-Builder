@@ -119,13 +119,22 @@ def build_ffmpeg_command(config: serialization.Config):
             f"[{trans_label}]"
         )
         
+        clip_title_text = (text_builder
+            .text(clip.title)
+            .fontsize(155)
+            .centered_x()
+            .bottom_y(20)
+            .enable(f"between(t, 2, {clip_video_end})") # show after 2s and for the rest of the clip
+            .build())
+
         # Trim video clip
         video_label = f"v{i}"
         filter_parts.append(
             f"[{video_idx}:v]"
             f"trim=start={clip.video.start}:end={clip_video_end},"
             f"setpts=PTS-STARTPTS,"
-            f"{clip_number_text}"
+            f"{clip_number_text},"
+            f"{clip_title_text}"
             f"[{video_label}]"
         )
         

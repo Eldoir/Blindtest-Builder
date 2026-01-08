@@ -26,7 +26,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
 
 ### Clip
-* `title` (_str_): displayed on screen when the clip is revealed (after the transition).
+* `title` (_str_): displayed at the bottom center of the screen, 2s after the clip is revealed (after the transition).
 * `video` (_Stream_): see below.
 * `audio` (_Stream_): see below.
 
@@ -49,6 +49,5 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `output/`: I put the output files of the program here.
 
 # Next steps
-* Add clip title on screen
 * Add cross fade transitions
   * Make it optional

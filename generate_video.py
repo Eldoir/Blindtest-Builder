@@ -1,5 +1,7 @@
 import subprocess
 import logging
+import time
+
 import utils
 import serialization
 from DrawTextBuilder import DrawTextBuilder
@@ -182,6 +184,7 @@ def build_ffmpeg_command(config: serialization.Config):
     # Build final command
     cmd = [
         "ffmpeg",
+        "-stats",
         "-loglevel", "error",
         *inputs,
         "-filter_complex", filter_complex,
@@ -216,8 +219,10 @@ def main():
         
         # logging.debug(" ".join(cmd))
         
+        start = time.perf_counter()
         subprocess.run(cmd, check=True)
-        logging.info(f"Video created at: {config.output}")
+        end = time.perf_counter()
+        logging.info(f"Video created in {end - start:.1f}s at: {config.output}")
         
     except subprocess.CalledProcessError as e:
         logging.error(f"FFmpeg failed: {e}")

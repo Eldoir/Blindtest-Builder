@@ -1,58 +1,7 @@
 import subprocess
 import logging
-from pathlib import Path
+import utils
 import serialization
-
-def get_video_duration(path: Path) -> float:
-    result = subprocess.run(
-        [
-            "ffprobe", "-v", "error",
-            "-show_entries", "format=duration",
-            "-of", "default=noprint_wrappers=1:nokey=1",
-            str(path)
-        ],
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True,
-        check=True
-    )
-    return float(result.stdout.strip())
-
-def determine_font_file(config: serialization.Config) -> str | None:
-    if config.font is not None:
-        return str(config.font)
-
-    # Determine font path based on OS
-    import platform
-    system = platform.system()
-    
-    # Windows
-    if system == "Windows":
-        return "C:/Windows/Fonts/arial.ttf"
-    # MacOS
-    if system == "Darwin":
-        return "/System/Library/Fonts/Supplemental/Arial.ttf"
-    # Linux
-    possible_fonts = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/TTF/DejaVuSans-Bold.ttf",
-        "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
-    ]
-    for f in possible_fonts:
-        if Path(f).exists():
-            return f
-        
-    return None
-
-def escape_filter_string(s: str) -> str:
-    """Escape special characters for FFmpeg filter strings"""
-    # For Windows paths and filter strings, we need to escape colons and backslashes
-    # Convert backslashes to forward slashes first (FFmpeg prefers this)
-    s = s.replace("\\", "/")
-    # Then escape colons and single quotes
-    s = s.replace(":", "\\:")
-    s = s.replace("'", "'\\''")
-    return s
 
 def build_ffmpeg_command(config: serialization.Config):
     """Build a single FFmpeg command to create the entire video"""
@@ -102,18 +51,33 @@ def build_ffmpeg_command(config: serialization.Config):
         audio_streams.append(f"[{input_map['intro']}:a]")
     
     filter_parts = []
-    font_file = determine_font_file(config)
+    font_file = utils.determine_font_file(config)
     if font_file is None:
         logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
-    font_file = escape_filter_string(str(font_file))
-    transition_duration = get_video_duration(config.transition)
+    font_file = utils.escape_filter_string(str(font_file))
+    transition_duration = utils.get_media_duration(config.transition)
 
     # Process each clip
     for i, clip in enumerate(clips, start=1):
-        video_duration = clip.video.end - clip.video.start
-        audio_duration = clip.audio.end - clip.audio.start
-        full_duration = transition_duration + video_duration
+        # Check that video is long enough
+        clip_video_end = clip.video.start + config.clip_duration
+        video_duration = utils.get_media_duration(clip.video.src)
+        if clip_video_end > video_duration:
+            raise ValueError(
+                f"Video for '{clip.title}' is too short: {video_duration}s "
+                f"(need at least {clip_video_end}s)"
+            )
         
+        # Check that audio is long enough
+        clip_audio_end = clip.audio.start + transition_duration + config.clip_duration
+        audio_duration = utils.get_media_duration(clip.audio.src)
+        if clip_audio_end > audio_duration:
+            raise ValueError(
+                f"Audio for '{clip.title}' is too short: {audio_duration}s "
+                f"(need at least {clip_audio_end}s)"
+            )
+        
+        full_duration = transition_duration + config.clip_duration
         # Validate audio duration
         if audio_duration < full_duration - 0.01:  # 0.01s tolerance
             raise ValueError(
@@ -150,7 +114,7 @@ def build_ffmpeg_command(config: serialization.Config):
         video_label = f"v{i}"
         filter_parts.append(
             f"[{video_idx}:v]"
-            f"trim=start={clip.video.start}:end={clip.video.end},"
+            f"trim=start={clip.video.start}:end={clip_video_end},"
             f"setpts=PTS-STARTPTS"
             f"[{video_label}]"
         )
@@ -169,7 +133,7 @@ def build_ffmpeg_command(config: serialization.Config):
         audio_label = f"a{i}"
         filter_parts.append(
             f"[{audio_idx}:a]"
-            f"atrim=start={clip.audio.start}:end={clip.audio.end},"
+            f"atrim=start={clip.audio.start}:end={clip_audio_end},"
             f"asetpts=PTS-STARTPTS,"
             f"atrim=duration={full_duration},"
             f"apad=whole_dur={full_duration}"
@@ -239,7 +203,7 @@ def main():
     except subprocess.CalledProcessError as e:
         logging.error(f"FFmpeg failed: {e}")
     except Exception as e:
-        logging.error(f"Exception: {e}")
+        logging.error(f"{e}")
 
 if __name__ == "__main__":
     main()

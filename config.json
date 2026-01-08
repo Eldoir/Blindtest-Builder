@@ -4,31 +4,26 @@
   "transition": "assets/transition.mp4",
   "output": "output/blind_test.mp4",
   "font": "Super Meatball.ttf",
+  "clip_duration": 5.0,
   "clips": [
     {
       "title": "Cuphead",
       "video": {
-        "src": "clips/Cuphead.mp4",
-        "start": 1.0,
-        "end": 4.5
+        "src": "clips/Cuphead.mp4"
       },
       "audio": {
         "src": "clips/Cuphead.mp3",
-        "start": 6.0,
-        "end": 19.5
+        "start": 6.0
       }
     },
     {
       "title": "Fez",
       "video": {
         "src": "clips/Fez.mp4",
-        "start": 1.0,
-        "end": 4.5
+        "start": 0.5
       },
       "audio": {
-        "src": "clips/Fez.mp3",
-        "start": 30.0,
-        "end": 43.5
+        "src": "clips/Fez.mp3"
       }
     }
   ]

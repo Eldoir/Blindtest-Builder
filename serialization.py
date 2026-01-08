@@ -6,8 +6,7 @@ import json
 @dataclass
 class Stream:
     src: Path
-    start: float
-    end: float
+    start: float = field(default=0)
 
     def __post_init__(self):
         self.src = Path(self.src)
@@ -22,6 +21,7 @@ class Clip:
 class Config:
     transition: Path
     output: Path
+    clip_duration: float
     clips: list[Clip]
     font: Optional[Path] = None
     intro: Optional[Path] = None
@@ -54,5 +54,6 @@ def load_config(path: str) -> Config:
         outro=data.get("outro"),
         transition=data["transition"],
         output=data["output"],
+        clip_duration=data["clip_duration"],
         clips=clips
     )

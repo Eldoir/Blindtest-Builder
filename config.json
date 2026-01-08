@@ -19,11 +19,22 @@
         }
     },
     {
+        "title": "Animal Crossing (Wild World)",
+        "year": 2005,
+        "video": {
+            "src": "clips/Animal Crossing Wild World - Longplay (No Commentary).mp4",
+            "start": 1.5
+        },
+        "audio": {
+            "src": "clips/Animal Crossing Wild World Soundtrack - Title Screen.mp3"
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {
         "src": "clips/Cuphead Launch Trailer.mp4",
-        "start": 21.0
+        "start": 21.5
       },
       "audio": {
         "src": "clips/Cuphead.mp3",

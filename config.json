@@ -5,6 +5,7 @@
   "output": "output/blind_test.mp4",
   "font": "Super Meatball.ttf",
   "clip_duration": 5.0,
+  "crossfade_duration": 0.5,
   "clips": [
     {
       "title": "Cuphead",

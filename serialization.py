@@ -23,6 +23,7 @@ class Config:
     output: Path
     clip_duration: float
     clips: list[Clip]
+    crossfade_duration: float = field(default=0)
     font: Optional[Path] = None
     intro: Optional[Path] = None
     outro: Optional[Path] = None
@@ -55,5 +56,6 @@ def load_config(path: str) -> Config:
         transition=data["transition"],
         output=data["output"],
         clip_duration=data["clip_duration"],
+        crossfade_duration=data["crossfade_duration"],
         clips=clips
     )

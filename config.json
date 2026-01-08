@@ -4,7 +4,7 @@
   "transition": "assets/transition.mp4",
   "output": "output/blind_test.mp4",
   "font": "Super Meatball.ttf",
-  "clip_duration": 5.0,
+  "clip_duration": 8.0,
   "clips": [
     {
       "title": "Cuphead",

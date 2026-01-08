@@ -2,6 +2,7 @@ import subprocess
 import logging
 import utils
 import serialization
+from DrawTextBuilder import DrawTextBuilder
 
 def build_ffmpeg_command(config: serialization.Config):
     """Build a single FFmpeg command to create the entire video"""
@@ -89,29 +90,32 @@ def build_ffmpeg_command(config: serialization.Config):
         video_idx = input_map[f'video_{clip}']
         audio_idx = input_map[f'audio_{clip}']
         
-        clip_number_text_filter = (
-            f"drawtext="
-            f"fontfile='{font_file}':"
-            f"text='#{i}':"
-            f"x=20:y=20:"
-            f"fontsize=255:"
-            f"fontcolor=white:"
-            f"borderw=4"
+        text_builder = (
+            DrawTextBuilder()
+            .fontfile(font_file)
+            .fontsize(255)
+            .fontcolor("white")
+            .borderw(4)
+        )
+
+        clip_number_text = (text_builder
+            .text(f"#{i}")
+            .x(20).y(20)
+            .build()
+        )
+
+        timer_text = (text_builder
+            .text(f"%{{eif\\:max(0\\,ceil({transition_duration}-t))\\:d}}")
+            .centered()
+            .build()
         )
 
         # Create transition with overlays
         trans_label = f"trans{i}"
         filter_parts.append(
             f"[{transition_idx}:v]"
-            f"{clip_number_text_filter},"
-            f"drawtext="
-            f"fontfile='{font_file}':"
-            f"text='%{{eif\\:max(0\\,ceil({transition_duration}-t))\\:d}}':"
-            f"x=(w-text_w)/2:"
-            f"y=(h-text_h)/2:"
-            f"fontsize=255:"
-            f"fontcolor=white:"
-            f"borderw=4"
+            f"{clip_number_text},"
+            f"{timer_text}"
             f"[{trans_label}]"
         )
         
@@ -121,7 +125,7 @@ def build_ffmpeg_command(config: serialization.Config):
             f"[{video_idx}:v]"
             f"trim=start={clip.video.start}:end={clip_video_end},"
             f"setpts=PTS-STARTPTS,"
-            f"{clip_number_text_filter}"
+            f"{clip_number_text}"
             f"[{video_label}]"
         )
         

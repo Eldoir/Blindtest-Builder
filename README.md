@@ -50,6 +50,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
 
 # Next steps
 * Add "test" flag in config, that only computes the first 2 clips
+* Shrink title if too long?
 * Add cross fade transitions
   * And make it optional
 * Or forget about cross fade transitions

@@ -8,6 +8,7 @@
   "clips": [
     {
         "title": "A Short Hike",
+        "year": 2019,
         "video": {
             "src": "clips/A Short Hike - Launch Trailer - Nintendo Switch.mp4",
             "start": 1.0
@@ -19,6 +20,7 @@
     },
     {
       "title": "Cuphead",
+      "year": 2017,
       "video": {
         "src": "clips/Cuphead Launch Trailer.mp4",
         "start": 21.0
@@ -30,6 +32,7 @@
     },
     {
       "title": "Fez",
+      "year": 2012,
       "video": {
         "src": "clips/FEZ - Launch Trailer - Nintendo Switch.mp4"
       },

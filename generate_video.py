@@ -121,9 +121,10 @@ def build_ffmpeg_command(config: serialization.Config):
             f"[{trans_label}]"
         )
         
+        clip_year = f" - {clip.year}" if clip.year else ""
         clip_title_text = (text_builder
-            .text(clip.title)
-            .fontsize(155)
+            .text(f"{clip.title}{clip_year}")
+            .fontsize(100)
             .centered_x()
             .bottom_y(20)
             .enable(f"between(t, 2, {clip_video_end})") # show after 2s and for the rest of the clip

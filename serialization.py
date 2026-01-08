@@ -16,6 +16,7 @@ class Clip:
     title: str
     audio: Stream
     video: Stream
+    year: Optional[float] = None
 
 @dataclass
 class Config:
@@ -45,7 +46,7 @@ def load_config(path: str) -> Config:
     for c in data.get("clips", []):
         video = Stream(**c["video"])
         audio = Stream(**c["audio"])
-        clip = Clip(title=c["title"], video=video, audio=audio)
+        clip = Clip(title=c["title"], video=video, audio=audio, year=c["year"])
         clips.append(clip)
 
     return Config(

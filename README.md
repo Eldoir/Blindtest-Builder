@@ -26,9 +26,12 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
 
 ### Clip
-* `title` (_str_): displayed at the bottom center of the screen, 2s after the clip is revealed (after the transition).
-* `video` (_Stream_): see below.
-* `audio` (_Stream_): see below.
+* Mandatory
+  * `title` (_str_): displayed at the bottom center of the screen, 2s after the clip is revealed (after the transition).
+  * `video` (_Stream_): see below.
+  * `audio` (_Stream_): see below.
+* Optional
+  * `year` (_int_): displayed after the title if given.
 
 ### Stream
 * Mandatory

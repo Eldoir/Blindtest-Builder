@@ -150,6 +150,17 @@
       }
     },
     {
+      "title": "Diablo II",
+      "year": 2000,
+      "video": {
+        "src": "clips/Diablo 2 Gameplay Video - Part 3.mp4",
+        "start": 1.0
+      },
+      "audio": {
+        "src": "clips/Diablo II.mp3"
+      }
+    },
+    {
       "title": "Fez",
       "year": 2012,
       "video": {

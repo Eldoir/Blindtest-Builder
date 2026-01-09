@@ -55,6 +55,17 @@
         }
     },
     {
+        "title": "Bit.Trip Runner",
+        "year": 2010,
+        "video": {
+            "src": "clips/BIT.TRIP RUNNER  Gameplay Trailer  Nintendo Switch!.mp4",
+            "start": 0.5
+        },
+        "audio": {
+            "src": "clips/BitTripRunner.mp3"
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

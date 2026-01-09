@@ -33,7 +33,6 @@
     {
         "title": "Battleblock Theater",
         "year": 2013,
-        "single": true,
         "video": {
             "src": "clips/BattleBlock Theater - Launch Trailer.mp4",
             "start": 7.5
@@ -41,6 +40,18 @@
         "audio": {
             "src": "clips/Battleblock Theater.mp3",
             "start": 27.5
+        }
+    },
+    {
+        "title": "BioShock",
+        "year": 2007,
+        "video": {
+            "src": "clips/Bioshock Remastered 15th Anniversary Trailer.mp4",
+            "start": 30.0
+        },
+        "audio": {
+            "src": "clips/Bioshock Welcome To Rapture.mp3",
+            "start": 2.0
         }
     },
     {

@@ -126,6 +126,18 @@
         }
     },
     {
+        "title": "Crawl",
+        "year": 2014,
+        "video": {
+            "src": "clips/Crawl Early Access Launch Trailer (HD).mp4",
+            "start": 0.5
+        },
+        "audio": {
+            "src": "clips/Crawl.mp3",
+            "start": 5.0
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

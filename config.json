@@ -114,6 +114,18 @@
         }
     },
     {
+        "title": "Clair Obscur\\: Expedition 33",
+        "year": 2025,
+        "video": {
+            "src": "clips/Clair Obscur Expedition 33 - Reveal Trailer  PS5 Games.mp4",
+            "start": 28.0
+        },
+        "audio": {
+            "src": "clips/Clair Obscur_ Expedition 33  Lumière [Official Music Video].mp3",
+            "start": 41.1
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

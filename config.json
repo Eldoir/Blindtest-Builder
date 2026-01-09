@@ -90,6 +90,18 @@
         }
     },
     {
+        "title": "Card City Nights",
+        "year": 2014,
+        "video": {
+            "src": "clips/Card City Nights Trailer.mp4",
+            "start": 4.5
+        },
+        "audio": {
+            "src": "clips/Card City Nights - New Home.mp3",
+            "start": 8.25
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

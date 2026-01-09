@@ -53,6 +53,10 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `clips/`: I put my audio and video files here.
   * `output/`: I put the output files of the program here.
 
+# FAQ
+* **Question**: I want a title with an apostrophe but the program won't let me.
+  * **Answer**: Use the curly apostrophe instead: ’. The single quote (apostrophe) is already used by the program internals and isn't easy to escape (at least I couldn't find it out).
+
 # Next steps
 * Shrink clip title if too long
 * Add (optional) cross fade transitions...

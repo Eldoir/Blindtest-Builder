@@ -102,6 +102,18 @@
         }
     },
     {
+        "title": "Celeste",
+        "year": 2018,
+        "video": {
+            "src": "clips/Celeste - Launch Trailer  PS4.mp4",
+            "start": 4.0
+        },
+        "audio": {
+            "src": "clips/Celeste.mp3",
+            "start": 10.1
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

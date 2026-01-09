@@ -217,6 +217,18 @@
       "audio": {
         "src": "clips/Fez.mp3"
       }
+    },
+    {
+      "title": "Hades",
+      "year": 2019,
+      "video": {
+        "src": "clips/Hades - Official Gameplay Reveal Trailer  The Game Awards 2018.mp4",
+        "start": 1.3
+      },
+      "audio": {
+        "src": "clips/Hades - God of the Dead.mp3",
+        "start": 218.4
+      }
     }
   ]
 }

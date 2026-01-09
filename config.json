@@ -161,6 +161,18 @@
       }
     },
     {
+      "title": "Dofus",
+      "year": 2004,
+      "video": {
+        "src": "clips/DOFUS 1.29 Le Donjon d'Incarnam.mp4",
+        "start": 20.0
+      },
+      "audio": {
+        "src": "clips/Dofus 1.29 - Les meilleures Musiques.mp3",
+        "start": 18.0
+      }
+    },
+    {
       "title": "Fez",
       "year": 2012,
       "video": {

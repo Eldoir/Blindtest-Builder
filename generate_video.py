@@ -216,6 +216,9 @@ def main():
         logging.error(f'Transition video not found at {config.transition}')
         return
     
+    # useful for testing
+    config.clips = utils.reduce_to_single(config.clips, lambda clip: clip.single)
+    
     if config.shuffle_clips:
         random.shuffle(config.clips)
     

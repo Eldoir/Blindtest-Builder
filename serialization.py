@@ -17,6 +17,7 @@ class Clip:
     audio: Stream
     video: Stream
     year: Optional[float] = None
+    single: bool = field(default=False)
 
 @dataclass
 class Config:
@@ -53,7 +54,7 @@ def load_config(path: str) -> Config:
             video=video,
             audio=audio,
             # Optional
-            **{key: c[key] for key in ("year") if key in c}
+            **{key: c[key] for key in ("year", "single") if key in c}
         ))
 
     return Config(

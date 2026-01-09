@@ -24,7 +24,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Windows: _Arial_
       * MacOS: _Arial_
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
-  * `shuffle_clips` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is false.
+  * `shuffle_clips` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is `false`.
 
 ### Clip
 * Mandatory
@@ -33,6 +33,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `audio` (_Stream_): see below.
 * Optional
   * `year` (_int_): displayed below the title if given.
+  * `single` (_bool_): if true, only this clip will be picked. Useful for testing when you are creating your blind test, because it speeds up the generation process. If multiple clips have this to true, only the first one will be kept. Default is `false`.
 
 ### Stream
 * Mandatory
@@ -53,7 +54,6 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `output/`: I put the output files of the program here.
 
 # Next steps
-* Add "enabled" flag in Clip class (true by default) and make it work
 * Shrink clip title if too long
 * Add (optional) cross fade transitions...
 * ...or forget about cross fade transitions

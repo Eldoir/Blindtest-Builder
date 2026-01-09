@@ -1,5 +1,7 @@
 from pathlib import Path
 import subprocess
+from typing import Callable, Iterable, TypeVar
+
 import serialization
 
 def get_media_duration(path: Path) -> float:
@@ -54,3 +56,15 @@ def escape_filter_string(s: str) -> str:
     s = s.replace(":", "\\:")
     s = s.replace("'", "'\\''")
     return s
+
+T = TypeVar("T")
+def reduce_to_single(
+        items: Iterable[T],
+        predicate: Callable[[T], bool]
+) -> list[T]:
+    """Returns an array with the first item matching the predicate,
+    or the entire array if no items match the predicate."""
+    for item in items:
+        if predicate(item):
+            return [item]
+    return list(items)

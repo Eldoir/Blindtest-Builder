@@ -27,6 +27,7 @@ class Config:
     font: Optional[Path] = None
     intro: Optional[Path] = None
     outro: Optional[Path] = None
+    shuffle_clips: bool = field(default = False)
 
     def __post_init__(self):
         self.transition = Path(self.transition)
@@ -56,5 +57,6 @@ def load_config(path: str) -> Config:
         transition=data["transition"],
         output=data["output"],
         clip_duration=data["clip_duration"],
-        clips=clips
+        clips=clips,
+        shuffle_clips=data["shuffle_clips"]
     )

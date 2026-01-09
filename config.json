@@ -4,6 +4,7 @@
   "transition": "assets/transition.mp4",
   "output": "output/blind_test.mp4",
   "font": "Super Meatball.ttf",
+  "shuffle_clips": true,
   "clip_duration": 10.0,
   "clips": [
     {

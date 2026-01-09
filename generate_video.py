@@ -1,6 +1,7 @@
 import subprocess
 import logging
 import time
+import random
 
 import utils
 import serialization
@@ -214,6 +215,9 @@ def main():
     if not config.transition.exists():
         logging.error(f'Transition video not found at {config.transition}')
         return
+    
+    if config.shuffle_clips:
+        random.shuffle(config.clips)
     
     logging.info(f"Building video with {len(config.clips)} clips...")
     

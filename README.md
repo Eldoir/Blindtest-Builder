@@ -24,6 +24,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Windows: _Arial_
       * MacOS: _Arial_
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
+  * `shuffle_clips` (_bool_): if true, clips will be randomly shuffled before generating the video.
 
 ### Clip
 * Mandatory
@@ -53,7 +54,6 @@ Here are the possible fields for this config (all paths are **relative** to the 
 
 # Next steps
 * Add "enabled" flag in Clip class (true by default) and make it work
-* Add "shuffle_clips" flag in Config
 * Shrink clip title if too long
 * Add (optional) cross fade transitions...
 * ...or forget about cross fade transitions

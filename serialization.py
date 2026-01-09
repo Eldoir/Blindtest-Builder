@@ -27,7 +27,7 @@ class Config:
     font: Optional[Path] = None
     intro: Optional[Path] = None
     outro: Optional[Path] = None
-    shuffle_clips: bool = field(default = False)
+    shuffle_clips: bool = field(default=False)
 
     def __post_init__(self):
         self.transition = Path(self.transition)
@@ -47,16 +47,26 @@ def load_config(path: str) -> Config:
     for c in data.get("clips", []):
         video = Stream(**c["video"])
         audio = Stream(**c["audio"])
-        clip = Clip(title=c["title"], video=video, audio=audio, year=c["year"])
-        clips.append(clip)
+        clips.append(Clip(
+            # Mandatory
+            title=c["title"],
+            video=video,
+            audio=audio,
+            # Optional
+            **{key: c[key] for key in ("year") if key in c}
+        ))
 
     return Config(
-        font=data.get("font"),
-        intro=data.get("intro"),
-        outro=data.get("outro"),
+        # Mandatory
         transition=data["transition"],
         output=data["output"],
         clip_duration=data["clip_duration"],
         clips=clips,
-        shuffle_clips=data["shuffle_clips"]
+        # Optional
+        **{key: data[key] for key in (
+            "font",
+            "intro",
+            "outro",
+            "shuffle_clips"
+        ) if key in data}
     )

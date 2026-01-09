@@ -219,7 +219,7 @@ def main():
     # useful for testing
     config.clips = utils.reduce_to_single(config.clips, lambda clip: clip.single)
     
-    if config.shuffle_clips:
+    if config.shuffle:
         random.shuffle(config.clips)
     
     logging.info(f"Building video with {len(config.clips)} clips...")

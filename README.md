@@ -24,7 +24,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Windows: _Arial_
       * MacOS: _Arial_
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
-  * `shuffle_clips` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is `false`.
+  * `shuffle` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is `false`.
 
 ### Clip
 * Mandatory

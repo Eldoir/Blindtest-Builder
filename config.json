@@ -66,6 +66,18 @@
         }
     },
     {
+        "title": "Borderlands",
+        "year": 2009,
+        "video": {
+            "src": "clips/Borderlands Game of the Year - Trailer officiel.mp4",
+            "start": 39.2
+        },
+        "audio": {
+            "src": "clips/Borderlands - Ain't No Rest for the Wicked.mp3",
+            "start": 2.1
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

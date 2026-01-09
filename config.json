@@ -173,7 +173,7 @@
       }
     },
     {
-      "title": "Don’t Starve Together",
+      "title": "Don’t Starve",
       "year": 2013,
       "video": {
         "src": "clips/Dont Starve Together Episode 2 Fred et Seb.mp4",
@@ -182,6 +182,18 @@
       "audio": {
         "src": "clips/Dont Starve.mp3",
         "start": 1.3
+      }
+    },
+    {
+      "title": "Electronic Super Joy",
+      "year": 2013,
+      "video": {
+        "src": "clips/Electronic Super Joy Trailer.mp4",
+        "start": 38.0
+      },
+      "audio": {
+        "src": "clips/Electronic Super Joy.mp3",
+        "start": 1.0
       }
     },
     {

@@ -78,6 +78,18 @@
         }
     },
     {
+        "title": "Braid",
+        "year": 2008,
+        "video": {
+            "src": "clips/Braid, Anniversary Edition  Official Game Trailer  Netflix.mp4",
+            "start": 3.5
+        },
+        "audio": {
+            "src": "clips/Braid.mp3",
+            "start": 3.0
+        }
+    },
+    {
       "title": "Cuphead",
       "year": 2017,
       "video": {

@@ -197,6 +197,18 @@
       }
     },
     {
+      "title": "Fall Guys",
+      "year": 2020,
+      "video": {
+        "src": "clips/Fall Guys - Gameplay Trailer  PS4.mp4",
+        "start": 33.8
+      },
+      "audio": {
+        "src": "clips/Fall Guys.mp3",
+        "start": 2.0
+      }
+    },
+    {
       "title": "Fez",
       "year": 2012,
       "video": {

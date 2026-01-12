@@ -68,6 +68,6 @@ def load_config(path: str) -> Config:
             "font",
             "intro",
             "outro",
-            "shuffle_clips"
+            "shuffle"
         ) if key in data}
     )

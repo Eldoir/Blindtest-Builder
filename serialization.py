@@ -29,6 +29,7 @@ class Config:
     intro: Optional[Path] = None
     outro: Optional[Path] = None
     shuffle: bool = field(default=False)
+    force_overwrite: bool = field(default=False)
 
     def __post_init__(self):
         self.transition = Path(self.transition)
@@ -68,6 +69,7 @@ def load_config(path: str) -> Config:
             "font",
             "intro",
             "outro",
-            "shuffle"
+            "shuffle",
+            "force_overwrite"
         ) if key in data}
     )

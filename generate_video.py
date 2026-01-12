@@ -205,9 +205,11 @@ def build_ffmpeg_command(config: serialization.Config):
     output_path = Path(config.output)
     output_path.parent.mkdir(parents=True, exist_ok=True) # create subdirs if they don't exist
 
+    overwrite_cmd = ["-y"] if config.force_overwrite else []
+
     # Build final command
     cmd = [
-        "ffmpeg",
+        "ffmpeg", *overwrite_cmd,
         "-stats",
         "-loglevel", "error",
         *inputs,

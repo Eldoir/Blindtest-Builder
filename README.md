@@ -25,6 +25,7 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * MacOS: _Arial_
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
   * `shuffle` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is `false`.
+  * `output_force_overwrite` (_bool_): if true, will always overwrite the output file without asking permission. Default is `false`.
 
 ### Clip
 * Mandatory

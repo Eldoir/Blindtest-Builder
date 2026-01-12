@@ -273,6 +273,19 @@
       "audio": {
         "src": "clips/Helldivers Soundtrack - Main Theme HD.mp3"
       }
+    },
+    {
+      "title": "Hollow Knight",
+      "year": 2017,
+      "single": true,
+      "video": {
+        "src": "clips/Hollow Knight - Release Trailer.mp4",
+        "start": 28.0
+      },
+      "audio": {
+        "src": "clips/Hollow Knight OST - False Knight.mp3",
+        "start": 2.0
+      }
     }
   ]
 }

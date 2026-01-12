@@ -23,10 +23,10 @@ def build_ffmpeg_command(config: serialization.Config):
             input_map['intro'] = input_idx
             input_idx += 1
         else:
-            raise ValueError(f"Intro not found at '{config.intro}'")
+            raise ValueError(f"Intro not found at '{config.intro.resolve()}'")
     
     if not config.transition.exists():
-        raise ValueError(f"Transition video not found at '{config.transition}'")
+        raise ValueError(f"Transition video not found at '{config.transition.resolve()}'")
 
     # Add transition (used multiple times)
     inputs.extend(["-i", str(config.transition)])
@@ -38,7 +38,7 @@ def build_ffmpeg_command(config: serialization.Config):
     # Add all video clips
     for clip in clips:
         if not clip.video.src.exists():
-            raise ValueError(f"Clip '{clip.title}': video not found at '{clip.video.src}'")
+            raise ValueError(f"Clip '{clip.title}': video not found at '{clip.video.src.resolve()}'")
         inputs.extend(["-i", str(clip.video.src)])
         input_map[f'video_{clip}'] = input_idx
         input_idx += 1
@@ -46,7 +46,7 @@ def build_ffmpeg_command(config: serialization.Config):
     # Add all audio clips
     for clip in clips:
         if not clip.audio.src.exists():
-            raise ValueError(f"Clip '{clip.title}': audio not found at '{clip.audio.src}'")
+            raise ValueError(f"Clip '{clip.title}': audio not found at '{clip.audio.src.resolve()}'")
         inputs.extend(["-i", str(clip.audio.src)])
         input_map[f'audio_{clip}'] = input_idx
         input_idx += 1
@@ -58,7 +58,7 @@ def build_ffmpeg_command(config: serialization.Config):
             input_map['outro'] = input_idx
             input_idx += 1
         else:
-            raise ValueError(f"Outro not found at '{config.outro}'")
+            raise ValueError(f"Outro not found at '{config.outro.resolve()}'")
     
     video_streams = []
     audio_streams = []
@@ -72,8 +72,10 @@ def build_ffmpeg_command(config: serialization.Config):
     font_file = utils.determine_font_file(config)
     if font_file is None:
         logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
-    if font_file is not None and not Path(font_file).exists():
-        raise ValueError(f"Font not found at '{font_file}'")
+    if font_file is not None:
+        font_file_path = Path(font_file)
+        if not font_file_path.exists():
+            raise ValueError(f"Font not found at '{font_file_path.resolve()}'")
     font_file = utils.escape_filter_string(str(font_file))
 
     transition_duration = utils.get_media_duration(config.transition)

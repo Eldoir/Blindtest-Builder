@@ -253,6 +253,15 @@
         "src": "clips/Hammerfest - Main theme.mp3"
       }
     },
+    {
+      "title": "Hearthstone",
+      "year": 2014,
+      "video": {
+        "src": "clips/Hearthstone (2021) - Gameplay (PC UHD) [4K60FPS].mp4"
+      },
+      "audio": {
+        "src": "clips/Hearthstone Title Theme.mp3"
+      }
     }
   ]
 }

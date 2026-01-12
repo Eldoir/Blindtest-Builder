@@ -229,6 +229,18 @@
         "src": "clips/Hades - God of the Dead.mp3",
         "start": 218.4
       }
+    },
+    {
+      "title": "Halo\\: Combat Evolved",
+      "year": 2001,
+      "video": {
+        "src": "clips/Halo Combat Evolved Anniversary - Official PC Launch Trailer.mp4",
+        "start": 8.25
+      },
+      "audio": {
+        "src": "clips/Halo 1 Theme.mp3",
+        "start": 46.5
+      }
     }
   ]
 }

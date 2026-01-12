@@ -286,6 +286,18 @@
         "src": "clips/Hollow Knight OST - False Knight.mp3",
         "start": 2.0
       }
+    },
+    {
+      "title": "Hue",
+      "year": 2016,
+      "video": {
+        "src": "clips/Hue - Coming Soon Trailer ｜ PS4, PS Vita.mp4",
+        "start": 40.0
+      },
+      "audio": {
+        "src": "clips/Hue - Dearest Hue (Hue Main Theme).mp3"
+      }
+    },
     }
   ]
 }

@@ -277,7 +277,6 @@
     {
       "title": "Hollow Knight",
       "year": 2017,
-      "single": true,
       "video": {
         "src": "clips/Hollow Knight - Release Trailer.mp4",
         "start": 28.0
@@ -330,6 +329,18 @@
       },
       "audio": {
         "src": "clips/Mario Kart Double Dash Main Theme.mp3"
+      }
+    },
+    {
+      "title": "Mega Man 10",
+      "year": 2010,
+      "video": {
+        "src": "clips/Mega Man 10 Sheep Man Stage (Mega Man) [1080 HD].mp4",
+        "start": 13.0
+      },
+      "audio": {
+        "src": "clips/Megaman 10 OST Cybersheep s Dream Sheep Man Theme.mp3",
+        "start": 9.3
       }
     },
     }

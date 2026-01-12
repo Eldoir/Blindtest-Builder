@@ -309,6 +309,18 @@
         "src": "clips/Inscryption OST 03 - The Prospector.mp3"
       }
     },
+    {
+      "title": "Katana Zero",
+      "year": 2019,
+      "video": {
+        "src": "clips/Katana Zero ｜ Official Game Trailer ｜ Netflix.mp4",
+        "start": 48.0
+      },
+      "audio": {
+        "src": "clips/Katana Zero.mp3",
+        "start": 17.6
+      }
+    },
     }
   ]
 }

@@ -31,7 +31,7 @@ def determine_font_file(config: serialization.Config) -> str | None:
     
     # Windows
     if system == "Windows":
-        return "C:/Windows/Fonts/arial.ttf"
+        return r"C:\Windows\Fonts\Arial.ttf"
     # MacOS
     if system == "Darwin":
         return "/System/Library/Fonts/Supplemental/Arial.ttf"
@@ -49,10 +49,7 @@ def determine_font_file(config: serialization.Config) -> str | None:
 
 def escape_filter_string(s: str) -> str:
     """Escape special characters for FFmpeg filter strings"""
-    # For Windows paths and filter strings, we need to escape colons and backslashes
-    # Convert backslashes to forward slashes first (FFmpeg prefers this)
-    s = s.replace("\\", "/")
-    # Then escape colons and single quotes
+    s = s.replace("\\", "\\\\") # for windows paths
     s = s.replace(":", "\\:")
     s = s.replace("'", "'\\''")
     return s

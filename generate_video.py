@@ -72,9 +72,9 @@ def build_ffmpeg_command(config: serialization.Config):
     font_file = utils.determine_font_file(config)
     if font_file is None:
         logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
-    font_file = utils.escape_filter_string(str(font_file))
-    if not Path(font_file).exists():
+    if font_file is not None and not Path(font_file).exists():
         raise ValueError(f"Font not found at '{font_file}'")
+    font_file = utils.escape_filter_string(str(font_file))
 
     transition_duration = utils.get_media_duration(config.transition)
 

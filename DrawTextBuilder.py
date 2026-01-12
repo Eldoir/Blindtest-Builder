@@ -17,7 +17,7 @@ class DrawTextBuilder:
         return self
 
     def fontfile(self, path: str):
-        return self.option("fontfile", path)
+        return self.option("fontfile", f"'{path}'")
 
     def fontsize(self, size: int):
         return self.option("fontsize", str(size))

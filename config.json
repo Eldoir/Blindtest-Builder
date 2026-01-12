@@ -298,6 +298,17 @@
         "src": "clips/Hue - Dearest Hue (Hue Main Theme).mp3"
       }
     },
+    {
+      "title": "Inscryption",
+      "year": 2021,
+      "video": {
+        "src": "clips/Inscryption Trailer ｜ Devolver Digital E3 2021.mp4",
+        "start": 15.0
+      },
+      "audio": {
+        "src": "clips/Inscryption OST 03 - The Prospector.mp3"
+      }
+    },
     }
   ]
 }

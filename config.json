@@ -343,6 +343,18 @@
         "start": 9.3
       }
     },
+    {
+      "title": "Metal Slug",
+      "year": 1996,
+      "video": {
+        "src": "clips/Metal Slug 1 Double (Two) Players Full HD Screen 4K Gameplay 2023  #MetalSlug  Xpert Gaming Studio.mp4",
+        "start": 41.0
+      },
+      "audio": {
+        "src": "clips/Metal Slug.mp3",
+        "start": 19.2
+      }
+    },
     }
   ]
 }

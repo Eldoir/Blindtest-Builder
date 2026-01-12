@@ -234,7 +234,12 @@ def main():
         format="%(levelname)s: %(message)s"
     )
 
-    config = serialization.load_config("config.json")
+    config_path = Path("config.json")
+    if not config_path.exists():
+        logging.error(f"Config file not found at '{config_path.resolve()}'")
+        exit()
+
+    config = serialization.load_config(str(config_path))
     
     # useful for testing
     config.clips = utils.reduce_to_single(config.clips, lambda clip: clip.single)

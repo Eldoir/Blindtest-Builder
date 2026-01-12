@@ -59,6 +59,8 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * **Answer**: Use the curly apostrophe instead: ’. The single quote (apostrophe) is already used by the program internals and isn't easy to escape (at least I couldn't find it out).
 
 # Next steps
+* Prepare a default folder (and ignore current config.json specific to my blind test)
+* When answered 'No' to overwrite, should not log and error, nor log the "Video created"
 * Shrink clip title if too long
 * Add (optional) cross fade transitions...
 * ...or forget about cross fade transitions

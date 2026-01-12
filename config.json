@@ -321,6 +321,17 @@
         "start": 17.6
       }
     },
+    {
+      "title": "Mario Kart\\: Double Dash!!",
+      "year": 2003,
+      "video": {
+        "src": "clips/Mario Kart Double Dash Intro HD.mp4",
+        "start": 11.0
+      },
+      "audio": {
+        "src": "clips/Mario Kart Double Dash Main Theme.mp3"
+      }
+    },
     }
   ]
 }

@@ -1,3 +1,4 @@
+from pathlib import Path
 import subprocess
 import logging
 import time
@@ -16,11 +17,17 @@ def build_ffmpeg_command(config: serialization.Config):
     input_idx = 0
     
     # Add intro if exists
-    if config.intro is not None and config.intro.exists():
-        inputs.extend(["-i", str(config.intro)])
-        input_map['intro'] = input_idx
-        input_idx += 1
+    if config.intro is not None:
+        if config.intro.exists():
+            inputs.extend(["-i", str(config.intro)])
+            input_map['intro'] = input_idx
+            input_idx += 1
+        else:
+            raise ValueError(f"Intro not found at '{config.intro}'")
     
+    if not config.transition.exists():
+        raise ValueError(f"Transition video not found at '{config.transition}'")
+
     # Add transition (used multiple times)
     inputs.extend(["-i", str(config.transition)])
     input_map['transition'] = input_idx
@@ -30,21 +37,28 @@ def build_ffmpeg_command(config: serialization.Config):
 
     # Add all video clips
     for clip in clips:
+        if not clip.video.src.exists():
+            raise ValueError(f"Clip '{clip.title}': video not found at '{clip.video.src}'")
         inputs.extend(["-i", str(clip.video.src)])
         input_map[f'video_{clip}'] = input_idx
         input_idx += 1
     
     # Add all audio clips
     for clip in clips:
+        if not clip.audio.src.exists():
+            raise ValueError(f"Clip '{clip.title}': audio not found at '{clip.audio.src}'")
         inputs.extend(["-i", str(clip.audio.src)])
         input_map[f'audio_{clip}'] = input_idx
         input_idx += 1
     
     # Add outro if exists
-    if config.outro is not None and config.outro.exists():
-        inputs.extend(["-i", str(config.outro)])
-        input_map['outro'] = input_idx
-        input_idx += 1
+    if config.outro is not None:
+        if config.outro.exists():
+            inputs.extend(["-i", str(config.outro)])
+            input_map['outro'] = input_idx
+            input_idx += 1
+        else:
+            raise ValueError(f"Outro not found at '{config.outro}'")
     
     video_streams = []
     audio_streams = []
@@ -59,6 +73,9 @@ def build_ffmpeg_command(config: serialization.Config):
     if font_file is None:
         logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
     font_file = utils.escape_filter_string(str(font_file))
+    if not Path(font_file).exists():
+        raise ValueError(f"Font not found at '{font_file}'")
+
     transition_duration = utils.get_media_duration(config.transition)
 
     # Process each clip
@@ -185,6 +202,9 @@ def build_ffmpeg_command(config: serialization.Config):
     
     filter_complex = ";".join(filter_parts)
     
+    output_path = Path(config.output)
+    output_path.parent.mkdir(parents=True, exist_ok=True) # create subdirs if they don't exist
+
     # Build final command
     cmd = [
         "ffmpeg",
@@ -199,7 +219,7 @@ def build_ffmpeg_command(config: serialization.Config):
         "-crf", "23",         # quality: lower = better (18-28 range)
         "-c:a", "aac",
         "-b:a", "192k",
-        str(config.output)
+        str(output_path)
     ]
     
     return cmd
@@ -211,10 +231,6 @@ def main():
     )
 
     config = serialization.load_config("config.json")
-    
-    if not config.transition.exists():
-        logging.error(f'Transition video not found at {config.transition}')
-        return
     
     # useful for testing
     config.clips = utils.reduce_to_single(config.clips, lambda clip: clip.single)

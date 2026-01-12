@@ -241,6 +241,18 @@
         "src": "clips/Halo 1 Theme.mp3",
         "start": 46.5
       }
+    },
+    {
+      "title": "Hammerfest",
+      "year": 2006,
+      "video": {
+        "src": "clips/Hammerfest - EternalFest - Eternal Hammerfest.mp4",
+        "start": 37.0
+      },
+      "audio": {
+        "src": "clips/Hammerfest - Main theme.mp3"
+      }
+    },
     }
   ]
 }

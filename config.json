@@ -262,6 +262,17 @@
       "audio": {
         "src": "clips/Hearthstone Title Theme.mp3"
       }
+    },
+    {
+      "title": "Helldivers",
+      "year": 2015,
+      "video": {
+        "src": "clips/HELLDIVERS - Launch Trailer  PS4, PS3, PS Vita.mp4",
+        "start": 7.0
+      },
+      "audio": {
+        "src": "clips/Helldivers Soundtrack - Main Theme HD.mp3"
+      }
     }
   ]
 }

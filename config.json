@@ -362,6 +362,18 @@
         "start": 19.2
       }
     },
+    {
+      "title": "Minecraft",
+      "year": 2011,
+      "video": {
+        "src": "clips/[Minecraft] Fanta Bob World - Ep 1 - Une nouvelle aventure.mp4",
+        "start": 164.0
+      },
+      "audio": {
+        "src": "clips/[Minecraft] Sweden.mp3",
+        "start": 34.0
+      }
+    },
     }
   ]
 }

@@ -71,7 +71,24 @@ All fields are optional, and the whole `render` section can be omitted (it will 
   * `output/`: I put the output files of the program here.
 
 # Tools
-* **download_yt**: Call this script with a youtube url and it will download it as mp4. Uses `yt-dlp` package under the hood.
+
+These are under the `tools` folder and can be called independently. They're not part of the generation process, but rather helpful tools to your belt as a blindtest maker.
+
+* **download_yt**: Download a youtube video in mp4, or audio in mp3, from its url. The file will be saved where the command line is executed.
+  * Prerequisites: your python must have the [yt-dlp](https://pypi.org/project/yt-dlp/) package installed.
+  * Args:
+    * `url|id` (_str_): the url to the youtube video, or the id (which is the part after `?v=` in the url).
+    * `-a` or `--audio`: an optional flag to download **audio only**.
+  * Examples:
+    * `python tools/download_yt.py https://www.youtube.com/watch?v=dQw4w9WgXcQ`
+    * `python tools/download_yt.py dQw4w9WgXcQ --audio`
+
+* **random_edit**: Generate a random edit of a video, with a specific duration, and random cut durations. Two runs of the same command line can lead to very different results!
+  * Args:
+    * `path` (_str_): the relative path to the source video.
+    * `target_duration` (_float_): the duration of the generated video.
+    * `durations` (_str_): a comma-separated list of floats, from which the script will randomly pick to cut the video.
+  * Example: `python tools/random_edit.py source.mp4 10 1,1.5,2` will generate a 10-seconds long video from the original `source.mp4`, with cuts happening randomly between 1, 1.5, and 2 seconds. So for example you could have a video split like: 1/2/1.5/1.5/1/2/1
 
 # FAQ
 * **Question**: I want a title with an apostrophe but the program won't let me.

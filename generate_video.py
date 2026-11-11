@@ -60,15 +60,17 @@ def build_ffmpeg_command(config: serialization.Config):
         else:
             raise ValueError(f"Outro not found at '{config.outro.resolve()}'")
     
+    filter_parts = []
     video_streams = []
     audio_streams = []
+    normalized_render_settings = utils.compute_normalized_render_settings(config.render)
 
     # Add intro video/audio if exists
     if 'intro' in input_map:
-        video_streams.append(f"[{input_map['intro']}:v]")
+        filter_parts.append(f"[{input_map['intro']}:v]{normalized_render_settings}[intro_v]")
+        video_streams.append("[intro_v]")
         audio_streams.append(f"[{input_map['intro']}:a]")
     
-    filter_parts = []
     font_file = utils.determine_font_file(config)
     if font_file is None:
         logging.warning("Could not find a suitable font for texts. This can lead to unexpected results on the final output.")
@@ -136,6 +138,7 @@ def build_ffmpeg_command(config: serialization.Config):
         trans_label = f"trans{i}"
         filter_parts.append(
             f"[{transition_idx}:v]"
+            f"{normalized_render_settings},"
             f"{clip_number_text},"
             f"{timer_text}"
             f"[{trans_label}]"
@@ -158,6 +161,7 @@ def build_ffmpeg_command(config: serialization.Config):
             f"[{video_idx}:v]"
             f"trim=start={clip.video.start}:end={clip_video_end},"
             f"setpts=PTS-STARTPTS,"
+            f"{normalized_render_settings},"
             f"{clip_number_text},"
             f"{clip_title_text}"
             f"[{video_label}]"
@@ -188,7 +192,8 @@ def build_ffmpeg_command(config: serialization.Config):
     
     # Add outro video/audio if exists
     if 'outro' in input_map:
-        video_streams.append(f"[{input_map['outro']}:v]")
+        filter_parts.append(f"[{input_map['outro']}:v]{normalized_render_settings}[outro_v]")
+        video_streams.append("[outro_v]")
         audio_streams.append(f"[{input_map['outro']}:a]")
     
     # Final concatenation

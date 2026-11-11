@@ -1,7 +1,23 @@
 from dataclasses import dataclass, field
+from enum import Enum
 from pathlib import Path
 from typing import Optional
 import json
+
+class FitMode(Enum):
+    LETTERBOX = "letterbox"  # bandes noires, tout le contenu reste visible
+    FULLSCREEN = "fullscreen" # plein écran, les bords dépassants sont rognés
+
+@dataclass
+class RenderSettings:
+    width: int = 1920
+    height: int = 1080
+    fps: int = 30
+    pixel_format: str = "yuv420p"
+    fit_mode: FitMode = FitMode.LETTERBOX
+
+    def __post_init__(self):
+        self.fit_mode = FitMode(self.fit_mode)
 
 @dataclass
 class Stream:
@@ -30,6 +46,7 @@ class Config:
     outro: Optional[Path] = None
     shuffle: bool = field(default=False)
     force_overwrite: bool = field(default=False)
+    render: RenderSettings = field(default_factory=RenderSettings)
 
     def __post_init__(self):
         self.transition = Path(self.transition)

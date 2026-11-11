@@ -26,6 +26,22 @@ Here are the possible fields for this config (all paths are **relative** to the 
       * Linux: _DejaVuSans-Bold_, or _LiberationSans-Bold_ if not found
   * `shuffle` (_bool_): if true, clips will be randomly shuffled before generating the video. Default is `false`.
   * `output_force_overwrite` (_bool_): if true, will always overwrite the output file without asking permission. Default is `false`.
+  * `render` (_RenderSettings_): the settings to apply when it comes to rendering (see below).
+
+### RenderSettings
+
+Controls the geometry of the final video. Every video stream (intro, transition, clips, outro) is normalized to these settings before being concatenated, so sources with different resolutions, frame rates or pixel formats can be mixed freely.
+
+All fields are optional, and the whole `render` section can be omitted (it will then get all of its defaults from the list below).
+
+* Optional
+  * `width` (_int_): width of the final video in pixels. Default is `1920`.
+  * `height` (_int_): height of the final video in pixels. Default is `1080`.
+  * `fps` (_int_): frame rate of the final video. Default is `30`.
+  * `pixel_format` (_str_): the pixel format of the final video, as understood by FFmpeg (see `ffmpeg -pix_fmts`). Default is `yuv420p`, which is the most widely compatible.
+  * `fit_mode` (_str_): how a video whose aspect ratio differs from the target is fitted into the frame. Default is `letterbox`.
+    * `letterbox`: the video is scaled down to fit entirely inside the frame, and black bars are added where needed. Nothing is cut off.
+    * `fullscreen`: the video is scaled up to fill the whole frame, and whatever overflows is cropped.
 
 ### Clip
 * Mandatory

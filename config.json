@@ -6,6 +6,13 @@
   "font": "Super Meatball.ttf",
   "shuffle": true,
   "clip_duration": 10.0,
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "pixel_format": "yuv420p",
+    "fit_mode": "fullscreen"
+  },
   "clips": [
     {
         "title": "A Short Hike",

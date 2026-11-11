@@ -65,3 +65,19 @@ def reduce_to_single(
         if predicate(item):
             return [item]
     return list(items)
+
+def compute_normalized_render_settings(settings: serialization.RenderSettings) -> str:
+    if settings.fit_mode == serialization.FitMode.LETTERBOX:
+        fit = (
+            f"scale={settings.width}:{settings.height}:force_original_aspect_ratio=decrease,"
+            f"pad={settings.width}:{settings.height}:(ow-iw)/2:(oh-ih)/2:color=black"
+        )
+    elif settings.fit_mode == serialization.FitMode.FULLSCREEN:
+        fit = (
+            f"scale={settings.width}:{settings.height}:force_original_aspect_ratio=increase,"
+            f"crop={settings.width}:{settings.height}"
+        )
+    else:
+        raise ValueError(f"Unsupported fit mode: {settings.fit_mode}")
+
+    return f"{fit},setsar=1,fps={settings.fps},format={settings.pixel_format}"

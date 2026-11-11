@@ -54,6 +54,9 @@ Here are the possible fields for this config (all paths are **relative** to the 
   * `clips/`: I put my audio and video files here.
   * `output/`: I put the output files of the program here.
 
+# Tools
+* **download_yt**: Call this script with a youtube url and it will download it as mp4. Uses `yt-dlp` package under the hood.
+
 # FAQ
 * **Question**: I want a title with an apostrophe but the program won't let me.
   * **Answer**: Use the curly apostrophe instead: ’. The single quote (apostrophe) is already used by the program internals and isn't easy to escape (at least I couldn't find it out).

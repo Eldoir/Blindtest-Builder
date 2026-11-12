@@ -3,7 +3,7 @@
   "outro": "assets/outro.mp4",
   "transition": "assets/transition.mp4",
   "output": "output/blind_test.mp4",
-  "font": "Super Meatball.ttf",
+  "font": "assets/Super Meatball.ttf",
   "shuffle": true,
   "clip_duration": 10.0,
   "render": {

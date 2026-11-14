@@ -374,6 +374,18 @@
         "start": 34.0
       }
     },
+    {
+      "title": "Ori and the Blind Forest",
+      "year": 2015,
+      "single": true,
+      "video": {
+        "src": "clips/[Ori and the Blind Forest] Definitive Edition - Launch Trailer - 1080p.mp4",
+        "start": 80.5
+      },
+      "audio": {
+        "src": "clips/[Ori and the Blind Forest] Light of Nibel (feat. Aeralie Brighton).mp3",
+        "start": 23.2
+      }
     }
   ]
 }

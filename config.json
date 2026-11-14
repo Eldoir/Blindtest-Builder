@@ -433,6 +433,18 @@
         "src": "clips/[Papers, Please] Theme Song.mp3",
         "start": 0.0
       }
+    },
+    {
+      "title": "Phoenix Wright\\: Ace Attorney",
+      "year": 2001,
+      "video": {
+        "src": "clips/[Phoenix Wright] Ace Attorney Trilogy - Announce Trailer.mp4",
+        "start": 58.7
+      },
+      "audio": {
+        "src": "clips/[Phoenix Wright Ace Attorney] OST - Pressing Pursuit ~ Cornered.mp3",
+        "start": 5.0
+      }
     }
   ]
 }

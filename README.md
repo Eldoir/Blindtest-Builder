@@ -93,6 +93,8 @@ These are under the `tools` folder and can be called independently. They're not 
 # FAQ
 * **Question**: I want a title with an apostrophe but the program won't let me.
   * **Answer**: Use the curly apostrophe instead: ’. The single quote (apostrophe) is already used by the program internals and isn't easy to escape (at least I couldn't find it out).
+* **Question**: I want a title with a colon (two dot) but the program won't let me.
+  * **Answer**: Same as above, it's used by the program internals. Escape it with two backslashes, eg: `"Phoenix Wright\\: Ace Attorney"`
 
 # Next steps
 * Prepare a default folder (and ignore current config.json specific to my blind test)

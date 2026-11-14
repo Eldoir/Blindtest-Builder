@@ -421,6 +421,18 @@
         "src": "clips/[Paladins] Menu Music.mp3",
         "start": 24.5
       }
+    },
+    {
+      "title": "Papers, Please",
+      "year": 2013,
+      "video": {
+        "src": "clips/[Papers, Please] I Played 100% of Papers, Please.mp4",
+        "start": 13.0
+      },
+      "audio": {
+        "src": "clips/[Papers, Please] Theme Song.mp3",
+        "start": 0.0
+      }
     }
   ]
 }

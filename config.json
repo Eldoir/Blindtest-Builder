@@ -397,6 +397,18 @@
         "src": "clips/[Overcooked 2] Soundtrack - Kevin Level.mp3",
         "start": 201.5
       }
+    },
+    {
+      "title": "Outer Wilds",
+      "year": 2019,
+      "video": {
+        "src": "clips/[Outer Wilds] Launch Trailer.mp4",
+        "start": 44.5
+      },
+      "audio": {
+        "src": "clips/[Outer Wilds] Main Title.mp3",
+        "start": 20.0
+      }
     }
   ]
 }

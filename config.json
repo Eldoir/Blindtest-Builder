@@ -409,6 +409,18 @@
         "src": "clips/[Outer Wilds] Main Title.mp3",
         "start": 20.0
       }
+    },
+    {
+      "title": "Paladins",
+      "year": 2018,
+      "video": {
+        "src": "clips/[Paladins] Be More Than A Hero Trailer ｜ PS4.mp4",
+        "start": 73.0
+      },
+      "audio": {
+        "src": "clips/[Paladins] Menu Music.mp3",
+        "start": 24.5
+      }
     }
   ]
 }

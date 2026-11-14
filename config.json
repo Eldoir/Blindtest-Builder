@@ -684,6 +684,24 @@
             "url": "https://www.youtube.com/watch?v=55bAUoyTicA"
         }
       }
+    },
+    {
+      "title": "Pokémon Argent/Or",
+      "year": 1999,
+      "video": {
+        "src": "clips/[Pokémon ArgentOr] Pokemon Gold & Silver (Nintendo Gameboy Color) - Retro Video Game Commercial Ad.mp4",
+        "start": 17.7,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=j3u0-c7JcNA"
+        }
+      },
+      "audio": {
+        "src": "clips/[Pokémon ArgentOr] Pokémon GoldSilver - Title.mp3",
+        "start": 19.4,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=Ul0hUyrq2gI"
+        }
+      }
     }
   ]
 }

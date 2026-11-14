@@ -445,6 +445,18 @@
         "src": "clips/[Phoenix Wright Ace Attorney] OST - Pressing Pursuit ~ Cornered.mp3",
         "start": 5.0
       }
+    },
+    {
+      "title": "Pokémon Donjon Mystère (Bleu)",
+      "year": 2005,
+      "video": {
+        "src": "clips/[Pokémon Donjon Mystère] Game Boy Advance – August 2024 Game Update – Nintendo Switch Online + Expansion Pack.mp4",
+        "start": 10.0
+      },
+      "audio": {
+        "src": "clips/[Pokémon Donjon Mystère] Opening Title.mp3",
+        "start": 18.7
+      }
     }
   ]
 }

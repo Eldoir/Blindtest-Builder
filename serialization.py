@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Any
 import json
 
 class FitMode(Enum):
@@ -23,6 +23,7 @@ class RenderSettings:
 class Stream:
     src: Path
     start: float = field(default=0)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
         self.src = Path(self.src)

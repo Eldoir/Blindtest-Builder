@@ -19,11 +19,17 @@
         "year": 2019,
         "video": {
             "src": "clips/A Short Hike - Launch Trailer - Nintendo Switch.mp4",
-            "start": 1.0
+            "start": 1.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=usBVx4J4CUM"
+            }
         },
         "audio": {
             "src": "clips/A Short Hike - Beach Buds.mp3",
-            "start": 15.0
+            "start": 15.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=jp1w67ROuyM"
+            }
         }
     },
     {
@@ -31,10 +37,16 @@
         "year": 2005,
         "video": {
             "src": "clips/Animal Crossing Wild World - Longplay (No Commentary).mp4",
-            "start": 1.5
+            "start": 1.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=DFlpXQ0MpvA"
+            }
         },
         "audio": {
-            "src": "clips/Animal Crossing Wild World Soundtrack - Title Screen.mp3"
+            "src": "clips/Animal Crossing Wild World Soundtrack - Title Screen.mp3",
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=Tg8NwcC24ZY"
+            }
         }
     },
     {
@@ -42,11 +54,17 @@
         "year": 2013,
         "video": {
             "src": "clips/BattleBlock Theater - Launch Trailer.mp4",
-            "start": 7.5
+            "start": 7.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=pv1ZoHt6poI"
+            }
         },
         "audio": {
             "src": "clips/Battleblock Theater.mp3",
-            "start": 27.5
+            "start": 27.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=J76KuJNW-Q0"
+            }
         }
     },
     {
@@ -54,11 +72,17 @@
         "year": 2007,
         "video": {
             "src": "clips/Bioshock Remastered 15th Anniversary Trailer.mp4",
-            "start": 30.0
+            "start": 30.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=_KVfPMSK8hA"
+            }
         },
         "audio": {
             "src": "clips/Bioshock Welcome To Rapture.mp3",
-            "start": 2.0
+            "start": 2.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=sEFIZh_Zscc"
+            }
         }
     },
     {
@@ -66,10 +90,16 @@
         "year": 2010,
         "video": {
             "src": "clips/BIT.TRIP RUNNER  Gameplay Trailer  Nintendo Switch!.mp4",
-            "start": 0.5
+            "start": 0.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=u4eCXgrwaKg"
+            }
         },
         "audio": {
-            "src": "clips/BitTripRunner.mp3"
+            "src": "clips/BitTripRunner.mp3",
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=ihaAe2ZKzYQ"
+            }
         }
     },
     {
@@ -77,11 +107,17 @@
         "year": 2009,
         "video": {
             "src": "clips/Borderlands Game of the Year - Trailer officiel.mp4",
-            "start": 39.2
+            "start": 39.2,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=UKzMC90kaRw"
+            }
         },
         "audio": {
             "src": "clips/Borderlands - Ain't No Rest for the Wicked.mp3",
-            "start": 26.0
+            "start": 26.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=LnSp9rgfel8"
+            }
         }
     },
     {
@@ -89,11 +125,17 @@
         "year": 2008,
         "video": {
             "src": "clips/Braid, Anniversary Edition  Official Game Trailer  Netflix.mp4",
-            "start": 3.5
+            "start": 3.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=U738YZG1k1I"
+            }
         },
         "audio": {
             "src": "clips/Braid.mp3",
-            "start": 3.0
+            "start": 3.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=uhTGT_rDZMM"
+            }
         }
     },
     {
@@ -101,11 +143,17 @@
         "year": 2014,
         "video": {
             "src": "clips/Card City Nights Trailer.mp4",
-            "start": 4.5
+            "start": 4.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=6kriHz4QXfU"
+            }
         },
         "audio": {
             "src": "clips/Card City Nights - New Home.mp3",
-            "start": 8.25
+            "start": 8.25,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=wMuPz73wl7s"
+            }
         }
     },
     {
@@ -113,11 +161,17 @@
         "year": 2018,
         "video": {
             "src": "clips/Celeste - Launch Trailer  PS4.mp4",
-            "start": 4.0
+            "start": 4.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=70d9irlxiB4"
+            }
         },
         "audio": {
             "src": "clips/Celeste.mp3",
-            "start": 10.1
+            "start": 10.1,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=N8OHSXvneOE"
+            }
         }
     },
     {
@@ -125,11 +179,17 @@
         "year": 2025,
         "video": {
             "src": "clips/Clair Obscur Expedition 33 - Reveal Trailer  PS5 Games.mp4",
-            "start": 28.0
+            "start": 28.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=-qgOZDRDynw"
+            }
         },
         "audio": {
             "src": "clips/Clair Obscur_ Expedition 33  Lumière [Official Music Video].mp3",
-            "start": 41.1
+            "start": 41.1,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=LpNVf8sczqU"
+            }
         }
     },
     {
@@ -137,11 +197,17 @@
         "year": 2014,
         "video": {
             "src": "clips/Crawl Early Access Launch Trailer (HD).mp4",
-            "start": 0.5
+            "start": 0.5,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=WY0N12w3csI"
+            }
         },
         "audio": {
             "src": "clips/Crawl.mp3",
-            "start": 5.0
+            "start": 5.0,
+            "metadata": {
+                "url": "https://www.youtube.com/watch?v=YSIAYLIUtBQ"
+            }
         }
     },
     {
@@ -149,11 +215,17 @@
       "year": 2017,
       "video": {
         "src": "clips/Cuphead Launch Trailer.mp4",
-        "start": 22.0
+        "start": 22.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=NN-9SQXoi50"
+        }
       },
       "audio": {
         "src": "clips/Cuphead.mp3",
-        "start": 5.0
+        "start": 5.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=L03-yzBVl9U"
+        }
       }
     },
     {
@@ -161,10 +233,16 @@
       "year": 2000,
       "video": {
         "src": "clips/Diablo 2 Gameplay Video - Part 3.mp4",
-        "start": 1.0
+        "start": 1.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=EVjjyquGYHQ"
+        }
       },
       "audio": {
-        "src": "clips/Diablo II.mp3"
+        "src": "clips/Diablo II.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=5DWsH66C2Ag"
+        }
       }
     },
     {
@@ -172,11 +250,17 @@
       "year": 2004,
       "video": {
         "src": "clips/DOFUS 1.29 Le Donjon d'Incarnam.mp4",
-        "start": 20.0
+        "start": 20.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=SptS4G-AzM0"
+        }
       },
       "audio": {
         "src": "clips/Dofus 1.29 - Les meilleures Musiques.mp3",
-        "start": 18.0
+        "start": 18.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=lr_bUOrEz7c"
+        }
       }
     },
     {
@@ -184,11 +268,17 @@
       "year": 2013,
       "video": {
         "src": "clips/Dont Starve Together Episode 2 Fred et Seb.mp4",
-        "start": 2.5
+        "start": 2.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=arI3DWUVKQI"
+        }
       },
       "audio": {
         "src": "clips/Dont Starve.mp3",
-        "start": 1.3
+        "start": 1.3,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=cXSpMP3jwcQ"
+        }
       }
     },
     {
@@ -196,11 +286,17 @@
       "year": 2013,
       "video": {
         "src": "clips/Electronic Super Joy Trailer.mp4",
-        "start": 38.0
+        "start": 38.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=TXLJO9f3uB4"
+        }
       },
       "audio": {
         "src": "clips/Electronic Super Joy.mp3",
-        "start": 1.0
+        "start": 1.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=2vcgsSJ9MQc"
+        }
       }
     },
     {
@@ -208,21 +304,33 @@
       "year": 2020,
       "video": {
         "src": "clips/Fall Guys - Gameplay Trailer  PS4.mp4",
-        "start": 33.8
+        "start": 33.8,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=FcITAzKW3fY"
+        }
       },
       "audio": {
         "src": "clips/Fall Guys.mp3",
-        "start": 2.0
+        "start": 2.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=ys4rkcMbtjY"
+        }
       }
     },
     {
       "title": "Fez",
       "year": 2012,
       "video": {
-        "src": "clips/FEZ - Launch Trailer - Nintendo Switch.mp4"
+        "src": "clips/FEZ - Launch Trailer - Nintendo Switch.mp4",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=lrEsNI0aCPk"
+        }
       },
       "audio": {
-        "src": "clips/Fez.mp3"
+        "src": "clips/Fez.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=TA-SGTmKnP0"
+        }
       }
     },
     {
@@ -230,11 +338,17 @@
       "year": 2019,
       "video": {
         "src": "clips/Hades - Official Gameplay Reveal Trailer  The Game Awards 2018.mp4",
-        "start": 1.3
+        "start": 1.3,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=ClZe5x8Tfiw"
+        }
       },
       "audio": {
         "src": "clips/Hades - God of the Dead.mp3",
-        "start": 218.4
+        "start": 218.4,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=cVukkhUI-xM"
+        }
       }
     },
     {
@@ -242,11 +356,17 @@
       "year": 2001,
       "video": {
         "src": "clips/Halo Combat Evolved Anniversary - Official PC Launch Trailer.mp4",
-        "start": 8.25
+        "start": 8.25,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=dAsX01K75ys"
+        }
       },
       "audio": {
         "src": "clips/Halo 1 Theme.mp3",
-        "start": 46.5
+        "start": 46.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=0jXTBAGv9ZQ"
+        }
       }
     },
     {
@@ -254,20 +374,32 @@
       "year": 2006,
       "video": {
         "src": "clips/Hammerfest - EternalFest - Eternal Hammerfest.mp4",
-        "start": 37.0
+        "start": 37.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=6Aru4Pd0bwQ"
+        }
       },
       "audio": {
-        "src": "clips/Hammerfest - Main theme.mp3"
+        "src": "clips/Hammerfest - Main theme.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=o1NFPOvfN8g"
+        }
       }
     },
     {
       "title": "Hearthstone",
       "year": 2014,
       "video": {
-        "src": "clips/Hearthstone (2021) - Gameplay (PC UHD) [4K60FPS].mp4"
+        "src": "clips/Hearthstone (2021) - Gameplay (PC UHD) [4K60FPS].mp4",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=hUi0eFuTi-g"
+        }
       },
       "audio": {
-        "src": "clips/Hearthstone Title Theme.mp3"
+        "src": "clips/Hearthstone Title Theme.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=WXxy3Y8daks"
+        }
       }
     },
     {
@@ -275,10 +407,16 @@
       "year": 2015,
       "video": {
         "src": "clips/HELLDIVERS - Launch Trailer  PS4, PS3, PS Vita.mp4",
-        "start": 7.0
+        "start": 7.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=dNe3su_ZyCw"
+        }
       },
       "audio": {
-        "src": "clips/Helldivers Soundtrack - Main Theme HD.mp3"
+        "src": "clips/Helldivers Soundtrack - Main Theme HD.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=F39Nwj6oyJ4"
+        }
       }
     },
     {
@@ -286,11 +424,17 @@
       "year": 2017,
       "video": {
         "src": "clips/Hollow Knight - Release Trailer.mp4",
-        "start": 28.0
+        "start": 28.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=UAO2urG23S4"
+        }
       },
       "audio": {
         "src": "clips/Hollow Knight OST - False Knight.mp3",
-        "start": 2.0
+        "start": 2.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=vKDQNGDOdE4"
+        }
       }
     },
     {
@@ -298,10 +442,16 @@
       "year": 2016,
       "video": {
         "src": "clips/Hue - Coming Soon Trailer ｜ PS4, PS Vita.mp4",
-        "start": 40.0
+        "start": 40.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=-TbQxVphzO4"
+        }
       },
       "audio": {
-        "src": "clips/Hue - Dearest Hue (Hue Main Theme).mp3"
+        "src": "clips/Hue - Dearest Hue (Hue Main Theme).mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=SyOV7w9j61o"
+        }
       }
     },
     {
@@ -309,10 +459,16 @@
       "year": 2021,
       "video": {
         "src": "clips/Inscryption Trailer ｜ Devolver Digital E3 2021.mp4",
-        "start": 15.0
+        "start": 15.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=RN5GSIWIN1k"
+        }
       },
       "audio": {
-        "src": "clips/Inscryption OST 03 - The Prospector.mp3"
+        "src": "clips/Inscryption OST 03 - The Prospector.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=lGykA0Hw6Gw"
+        }
       }
     },
     {
@@ -320,11 +476,17 @@
       "year": 2019,
       "video": {
         "src": "clips/Katana Zero ｜ Official Game Trailer ｜ Netflix.mp4",
-        "start": 48.0
+        "start": 48.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=CaBM1HPD9xI"
+        }
       },
       "audio": {
         "src": "clips/Katana Zero.mp3",
-        "start": 17.6
+        "start": 17.6,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=CnJsQQWrmiM"
+        }
       }
     },
     {
@@ -332,10 +494,16 @@
       "year": 2003,
       "video": {
         "src": "clips/Mario Kart Double Dash Intro HD.mp4",
-        "start": 11.0
+        "start": 11.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=lG1vcVVoe10"
+        }
       },
       "audio": {
-        "src": "clips/Mario Kart Double Dash Main Theme.mp3"
+        "src": "clips/Mario Kart Double Dash Main Theme.mp3",
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=AC9aGiH8mlA"
+        }
       }
     },
     {
@@ -343,11 +511,17 @@
       "year": 2010,
       "video": {
         "src": "clips/Mega Man 10 Sheep Man Stage (Mega Man) [1080 HD].mp4",
-        "start": 13.0
+        "start": 13.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=G9j2xZATQ6c"
+        }
       },
       "audio": {
         "src": "clips/Megaman 10 OST Cybersheep s Dream Sheep Man Theme.mp3",
-        "start": 9.3
+        "start": 9.3,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=zW8Lt1a7QAc"
+        }
       }
     },
     {
@@ -355,11 +529,17 @@
       "year": 1996,
       "video": {
         "src": "clips/Metal Slug 1 Double (Two) Players Full HD Screen 4K Gameplay 2023  #MetalSlug  Xpert Gaming Studio.mp4",
-        "start": 41.0
+        "start": 41.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=BLTfkC8ehXg"
+        }
       },
       "audio": {
         "src": "clips/Metal Slug.mp3",
-        "start": 19.2
+        "start": 19.2,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=GbSWBCNmaMs"
+        }
       }
     },
     {
@@ -367,11 +547,17 @@
       "year": 2011,
       "video": {
         "src": "clips/[Minecraft] Fanta Bob World - Ep 1 - Une nouvelle aventure.mp4",
-        "start": 164.0
+        "start": 164.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=h830e0Rp0cs"
+        }
       },
       "audio": {
         "src": "clips/[Minecraft] Sweden.mp3",
-        "start": 34.0
+        "start": 34.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=aBkTkxKDduc"
+        }
       }
     },
     {
@@ -379,11 +565,17 @@
       "year": 2015,
       "video": {
         "src": "clips/[Ori and the Blind Forest] Definitive Edition - Launch Trailer - 1080p.mp4",
-        "start": 80.5
+        "start": 80.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=vO_3CfEk22Y"
+        }
       },
       "audio": {
         "src": "clips/[Ori and the Blind Forest] Light of Nibel (feat. Aeralie Brighton).mp3",
-        "start": 23.2
+        "start": 23.2,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=t6vWDz5NzOY"
+        }
       }
     },
     {
@@ -391,11 +583,17 @@
       "year": 2018,
       "video": {
         "src": "clips/[Overcooked 2] - Kevin 1 Level - 4 Stars - 2 Player co-op.mp4",
-        "start": 213.0
+        "start": 213.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=TNjq1yQf9fk"
+        }
       },
       "audio": {
         "src": "clips/[Overcooked 2] Soundtrack - Kevin Level.mp3",
-        "start": 201.5
+        "start": 201.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=K-kDSb_ZlA4"
+        }
       }
     },
     {
@@ -403,11 +601,17 @@
       "year": 2019,
       "video": {
         "src": "clips/[Outer Wilds] Launch Trailer.mp4",
-        "start": 44.5
+        "start": 44.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=ZKJUMMCJvGM"
+        }
       },
       "audio": {
         "src": "clips/[Outer Wilds] Main Title.mp3",
-        "start": 20.0
+        "start": 20.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=vfCxLVQaSis"
+        }
       }
     },
     {
@@ -415,11 +619,17 @@
       "year": 2018,
       "video": {
         "src": "clips/[Paladins] Be More Than A Hero Trailer ｜ PS4.mp4",
-        "start": 73.0
+        "start": 73.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=fx5F1anRlJI"
+        }
       },
       "audio": {
         "src": "clips/[Paladins] Menu Music.mp3",
-        "start": 24.5
+        "start": 24.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=eLXl4tJ-Qgw"
+        }
       }
     },
     {
@@ -427,11 +637,16 @@
       "year": 2013,
       "video": {
         "src": "clips/[Papers, Please] I Played 100% of Papers, Please.mp4",
-        "start": 13.0
+        "start": 13.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=5E6V80lXLXU"
+        }
       },
       "audio": {
         "src": "clips/[Papers, Please] Theme Song.mp3",
-        "start": 0.0
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=OBQE_TNI7zw"
+        }
       }
     },
     {
@@ -439,11 +654,17 @@
       "year": 2001,
       "video": {
         "src": "clips/[Phoenix Wright] Ace Attorney Trilogy - Announce Trailer.mp4",
-        "start": 58.7
+        "start": 58.7,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=JigGnZXEdDk"
+        }
       },
       "audio": {
         "src": "clips/[Phoenix Wright Ace Attorney] OST - Pressing Pursuit ~ Cornered.mp3",
-        "start": 5.0
+        "start": 5.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=UxnvGDK0WGM"
+        }
       }
     },
     {
@@ -451,11 +672,17 @@
       "year": 2005,
       "video": {
         "src": "clips/[Pokémon Donjon Mystère] Game Boy Advance – August 2024 Game Update – Nintendo Switch Online + Expansion Pack.mp4",
-        "start": 10.0
+        "start": 10.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=S8uySYKEcjY"
+        }
       },
       "audio": {
         "src": "clips/[Pokémon Donjon Mystère] Opening Title.mp3",
-        "start": 18.7
+        "start": 18.7,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=55bAUoyTicA"
+        }
       }
     }
   ]

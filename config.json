@@ -702,6 +702,24 @@
             "url": "https://www.youtube.com/watch?v=Ul0hUyrq2gI"
         }
       }
+    },
+    {
+      "title": "Portal 2",
+      "year": 2011,
+      "video": {
+        "src": "clips/[Portal 2] Full Co-op Trailer.mp4",
+        "start": 75.5,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=A88YiZdXugA"
+        }
+      },
+      "audio": {
+        "src": "clips/[Portal 2] Still Alive.mp3",
+        "start": 132.0,
+        "metadata": {
+            "url": "https://www.youtube.com/watch?v=Y6ljFaKRTrI"
+        }
+      }
     }
   ]
 }
